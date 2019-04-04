@@ -10,6 +10,7 @@ re_katakana = re.compile(r'[\u30A1-\u30F4]+')
 
 for index, row in data.iterrows():
     if re_katakana.fullmatch(row['Name']):
+        #print(index)
         data.at[index, 'Name'] = np.nan
 
 data = data.dropna()
